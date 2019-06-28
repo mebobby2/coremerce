@@ -82,7 +82,18 @@ The following are the main points to focus on:
 ##### Layered System
 Most modern applications are designed using multiple layers, and the same is expected from a RESTful service. In a layered system, each layer is restricted to only seeing or knowing the next layer in the hierarchy.
 
-## Upto
-Page 37
+### SOAP
+**Simple Object Access Protocol (SOAP)** is an XML-based messaging protocol for exchanging information among computers. SOAP relies on application layer protocols, most often **Hypertext Transfer Protocol (HTTP)** or **Simple Mail Transfer Protocol (SMTP)**, for message negotiation and transmission.
 
-Chapter 2
+#### SOAP structure
+* Envelope - Mandatory element of SOAP message structure. Defines the start and the end of the message.
+* Header - Optional element of the SOAP message. It contains information regarding the SOAP message that can be used to process the data.
+* Body - This is the main part, which contains the actual message in XML structure. Obviously, it is a mandatory element.
+* Fault - If any errors occur while processing the SOAP message, an optional Fault element can be used to provide information about them.
+
+
+
+## Upto
+Page 43
+
+Open Visual Studio and undertake our favorite step
