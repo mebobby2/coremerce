@@ -1,5 +1,12 @@
 # Coremerce
 
+## Prerequites
+* .net core (https://dotnet.microsoft.com/download)
+
+## Run
+1. ```dotnet run```
+2. Visit: https://localhost:5001/api/values
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
@@ -94,6 +101,6 @@ Most modern applications are designed using multiple layers, and the same is exp
 
 
 ## Upto
-Page 43
+Page 47
 
-Open Visual Studio and undertake our favorite step
+Interesting facts
