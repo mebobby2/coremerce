@@ -1,4 +1,4 @@
-namespace coremerce.Models
+namespace coremerce.Domain
 {
   public class Product
   {

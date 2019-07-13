@@ -98,6 +98,8 @@ Most modern applications are designed using multiple layers, and the same is exp
 * Body - This is the main part, which contains the actual message in XML structure. Obviously, it is a mandatory element.
 * Fault - If any errors occur while processing the SOAP message, an optional Fault element can be used to provide information about them.
 
+## Book Code
+https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Core
 
 
 ## Upto
