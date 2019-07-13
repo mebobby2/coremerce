@@ -1,5 +1,7 @@
 using System.Collections.Generic;
-using coremerce.Models;
+using System.Threading.Tasks;
+using coremerce.Domain;
+using coremerce.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 namespace coremerce.Controllers
 {
@@ -7,6 +9,13 @@ namespace coremerce.Controllers
   [Route("api/[Controller]")]
   public class ProductsController : Controller
   {
+    public IProductService _productService {  get; set; }
+
+    public ProductsController(IProductService productService)
+    {
+      _productService = productService;
+    }
+
     [HttpGet]
     public IEnumerable<Product> Get()
     {
@@ -17,5 +26,14 @@ namespace coremerce.Controllers
         new Product(1, "Television", new decimal(500.90))
       };
     }
+
+    [HttpGet("{id}")]
+    public Task<Product> Get(int id) => _productService.GetOrderAsync(id);
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody]Product product)
+      => (await _productService.CreateProductAsync(product))
+        ? (IActionResult)Created($"api/products/{product.Id}", product)
+        : StatusCode(500);
   }
 }
