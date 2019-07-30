@@ -7,6 +7,12 @@
 1. ```dotnet run```
 2. Visit: https://localhost:5001/api/values
 
+## Package Management
+To add a package:
+```
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+```
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
