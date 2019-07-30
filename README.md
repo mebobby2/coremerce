@@ -3,6 +3,10 @@
 ## Prerequites
 * .net core (https://dotnet.microsoft.com/download)
 
+## DB Setup
+1. Enter mysql console: ```mysql -u root -p```
+2. Run command: ```source \path\to\project\db.sql;```
+
 ## Run
 1. ```dotnet run```
 2. Visit: https://localhost:5001/api/values
@@ -109,6 +113,8 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 68
+Page 71
 
-Chapter 3
+Now, we arrive at the point where we need model classes according to the database tables.
+
+Before that: run db.sql to create db schema. But first u must convert the script from sql server to mysql syntax.
