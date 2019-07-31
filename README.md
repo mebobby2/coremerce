@@ -116,5 +116,3 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 Page 71
 
 Now, we arrive at the point where we need model classes according to the database tables.
-
-Before that: run db.sql to create db schema. But first u must convert the script from sql server to mysql syntax.
