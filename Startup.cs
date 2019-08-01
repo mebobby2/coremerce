@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using coremerce.Interfaces;
 using coremerce.Services;
+using coremerce.Models;
 
 namespace coremerce
 {
@@ -29,6 +30,8 @@ namespace coremerce
         {
             services.AddSingleton<IProductService, ProductService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var connection = @"server=localhost;port=3306;user=root;password=password11;database=Coremerce";
+            services.AddDbContext<CoremerceContext>(options => options.UseMySQL(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -21,6 +21,13 @@ To add a package: ```dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
 
 * Add a model via scaffold ```dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=password11;database=Coremerce" MySql.Data.EntityFrameworkCore -o Models -t Customers```
 
+## C# Notes
+### Partial Classes
+It provides a special ability to implement the functionality of a single class into multiple files and all these files are combined into a single class file when the application is compiled.
+
+### Var
+Local variables can be declared without giving an explicit type. The var keyword instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement.
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
@@ -117,6 +124,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 71
+Page 74
 
-Now, we arrive at the point where we need model classes according to the database tables.
+Generating the controller
