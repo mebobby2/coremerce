@@ -7,6 +7,9 @@
 1. Enter mysql console: ```mysql -u root -p```
 2. Run command: ```source \path\to\project\db.sql;```
 
+## Build
+1. ```dotnet restore```
+
 ## Run
 1. ```dotnet run```
 2. Visit: https://localhost:5001/api/values
