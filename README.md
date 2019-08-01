@@ -28,6 +28,34 @@ It provides a special ability to implement the functionality of a single class i
 ### Var
 Local variables can be declared without giving an explicit type. The var keyword instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement.
 
+### Extension Methods
+Extension methods are static methods, which are called as if they were instance methods on the extended type. With Extension methods, you can add methods to existing types without even creating a new derived type, recompiling, or modifying the original type.
+
+```
+public static bool IsGreaterThan(this int i, int value)
+{
+    return i > value;
+}
+
+10.IsGreaterThan(100);
+```
+
+### Understanding AddDbContext Method Signature
+```
+AddDbContext<TContext>(IServiceCollection, Action<DbContextOptionsBuilder>, ServiceLifetime, ServiceLifetime)
+```
+
+1. It is an extension method (this) that can be used on an IServiceCollection, so the first parameter in this case is services (services.AddDbContext)
+2. You can see that the second parameter expects an Action. An action doesn't return anything, it just executes some code.
+3. The third & fourth parameter have default values set.
+
+So,
+```
+services.AddDbContext<CoremerceContext>(options => options.UseMySQL(connection));
+```
+
+services is the first parameter and the second parameter is a lambda expression that takes 'options' as a parameter.
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
