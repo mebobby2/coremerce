@@ -7,7 +7,7 @@
 1. Enter mysql console: ```mysql -u root -p```
 2. Run command: ```source \path\to\project\db.sql;```
 
-## Build
+## Install Dependencies
 1. ```dotnet restore```
 
 ## Run
@@ -15,10 +15,11 @@
 2. Visit: https://localhost:5001/api/values
 
 ## Package Management
-To add a package:
-```
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-```
+To add a package: ```dotnet add package Microsoft.EntityFrameworkCore.SqlServer```
+
+## Generators
+
+* Add a model via scaffold ```dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=password11;database=Coremerce" MySql.Data.EntityFrameworkCore -o Models -t Customers```
 
 ## Notes
 ### REST
