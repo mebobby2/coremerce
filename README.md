@@ -153,6 +153,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 74
+Page 76
 
-Generating the controller
+Calling the API from a page to register the customer
