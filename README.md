@@ -19,7 +19,8 @@ To add a package: ```dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
 
 ## Generators
 * Install scaffold generator: ```dotnet tool install -g dotnet-aspnet-codegenerator```
-* Add a model via scaffold ```dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=password11;database=Coremerce" MySql.Data.EntityFrameworkCore -o Models -t Customers```
+* Add a model via scaffold: ```dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=password11;database=Coremerce" MySql.Data.EntityFrameworkCore -o Models -t Customers```
+* Add a controller: ```dotnet aspnet-codegenerator controller -name CustomersController -actions -api -m Customers -dc CoremerceContext -outDir Controllers```
 
 ## C# Notes
 ### Partial Classes
