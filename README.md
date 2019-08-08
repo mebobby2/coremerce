@@ -170,3 +170,5 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 Page 76
 
 Calling the API from a page to register the customer
+
+Registration page is added already
