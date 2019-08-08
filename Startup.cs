@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.FileProviders;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using coremerce.Interfaces;
 using coremerce.Services;
+using System.IO;
 using coremerce.Models;
 
 namespace coremerce
@@ -50,6 +52,11 @@ namespace coremerce
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
+            });
         }
     }
 }
