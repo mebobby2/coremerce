@@ -57,6 +57,20 @@ services.AddDbContext<CoremerceContext>(options => options.UseMySQL(connection))
 
 services is the first parameter and the second parameter is a lambda expression that takes 'options' as a parameter.
 
+### Object Initializer
+Object initializers is a quick way to assign values of an object's properties and fields. An object can be initialized without explicitly calling a class's constructor.
+```
+new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
+}
+```
+is the object initializer form for:
+```
+StaticFileOptions options = new StaticFileOptions();
+options.FileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
+```
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
