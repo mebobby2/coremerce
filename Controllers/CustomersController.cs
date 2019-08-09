@@ -29,7 +29,7 @@ namespace coremerce.Controllers
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customers>> GetCustomers(string id)
+        public async Task<ActionResult<Customers>> GetCustomers(Guid id)
         {
             var customers = await _context.Customers.FindAsync(id);
 
@@ -43,7 +43,7 @@ namespace coremerce.Controllers
 
         // PUT: api/Customers/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomers(string id, Customers customers)
+        public async Task<IActionResult> PutCustomers(Guid id, Customers customers)
         {
             if (id != customers.Id)
             {
@@ -97,7 +97,7 @@ namespace coremerce.Controllers
 
         // DELETE: api/Customers/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Customers>> DeleteCustomers(string id)
+        public async Task<ActionResult<Customers>> DeleteCustomers(Guid id)
         {
             var customers = await _context.Customers.FindAsync(id);
             if (customers == null)
@@ -111,7 +111,7 @@ namespace coremerce.Controllers
             return customers;
         }
 
-        private bool CustomersExists(string id)
+        private bool CustomersExists(Guid id)
         {
             return _context.Customers.Any(e => e.Id == id);
         }
