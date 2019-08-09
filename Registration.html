@@ -29,11 +29,11 @@
                     "telephone": $('#txtMobile').val(),
                     "fax": $('#txtFax').val(),
                     "password": $('#txtPassword').val(),
-                    "newsletteropted": false
+                    "newsletteropted": 0
                 };
 
                 $.ajax({
-                    url: 'http://localhost:57571/api/Customers',
+                    url: 'https://localhost:5001/api/Customers',
                     type: "POST",
                     contentType: "application/json",
                     data: JSON.stringify(customer),
