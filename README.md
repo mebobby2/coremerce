@@ -167,8 +167,8 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 76
+Page 80
 
-Calling the API from a page to register the customer
+I am returning BadRequest() by adding an error message for th
 
-Registration page is added already
+But first, see why uniqueness on email is failing
