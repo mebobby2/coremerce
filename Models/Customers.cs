@@ -14,10 +14,10 @@ namespace coremerce.Models
         public string Lastname { get; set; }
         public DateTime Dob { get; set; }
         public string Email { get; set; }
-        public string Mainaddressid { get; set; }
+        public Guid? Mainaddressid { get; set; }
         public string Telephone { get; set; }
         public string Fax { get; set; }
         public string Password { get; set; }
-        public byte Newsletteropted { get; set; }
+        public bool Newsletteropted { get; set; }
     }
 }

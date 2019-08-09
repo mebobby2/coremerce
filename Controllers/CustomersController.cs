@@ -75,6 +75,11 @@ namespace coremerce.Controllers
         [HttpPost]
         public async Task<ActionResult<Customers>> PostCustomers(Customers customers)
         {
+            if (_context.Customers.Any(x => x.Email == customers.Email))
+            {
+                ModelState.AddModelError("email", "user with mail id already exists!");
+                return BadRequest(ModelState);
+            }
             _context.Customers.Add(customers);
             try
             {

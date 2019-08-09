@@ -170,5 +170,3 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 Page 80
 
 I am returning BadRequest() by adding an error message for th
-
-But first, see why uniqueness on email is failing
