@@ -33,8 +33,19 @@ namespace coremerce
         {
             services.AddSingleton<IProductService, ProductService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             var connection = @"server=localhost;port=3306;user=root;password=password11;database=Coremerce";
             services.AddDbContext<CoremerceContext>(options => options.UseMySql(connection));
+
+            services.AddCors(options => {
+                options.AddPolicy("AllowAll",
+                    builder => {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,7 @@ namespace coremerce
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseMvc();
 
             app.UseStaticFiles(new StaticFileOptions()
