@@ -31,6 +31,7 @@
                         dataType: "json",
                         headers: { 'Authorization': 'Basic ' + btoa(email + ':' + password) },
                         success: function (result) {
+                            $('#Profile .form-horizontal').empty();
                             if (result) {
                                 for (var key in result) {
                                     var value = result[key];
