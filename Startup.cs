@@ -12,9 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.IO;
 using coremerce.Interfaces;
 using coremerce.Services;
-using System.IO;
+using coremerce.Security.Authentication;
 using coremerce.Models;
 
 namespace coremerce
@@ -46,6 +47,10 @@ namespace coremerce
                         .AllowAnyHeader();
                     });
             });
+
+            services.AddAuthentication("Basic")
+                .AddScheme<BasicAuthenticationOptions, BasicAuthenticationHandler>("Basic", null);
+            services.AddTransient<IAuthenticationHandler, BasicAuthenticationHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

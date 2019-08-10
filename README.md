@@ -71,6 +71,18 @@ StaticFileOptions options = new StaticFileOptions();
 options.FileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
 ```
 
+### Calling base constructor
+```
+public class MyExceptionClass : Exception
+{
+    public MyExceptionClass(string message, string extrainfo) : base(message)
+    {
+        //other stuff here
+    }
+}
+```
+A constructor is not something that you can call anytime within a method.
+
 ## Notes
 ### REST
 Stands for representational state transfer. It is an architectural style that defines a set of guidelines for building web services. An architectural style is a concept with predefined principles.
@@ -167,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 87
+Page 90
 
-Let's get started. Remember that our goal is to achieve the following
+To test the API, you can design an HTML page to show the profile of the user by getting

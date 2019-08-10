@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using coremerce.Models;
+using System.Security.Claims;
 
 namespace coremerce.Controllers
 {
@@ -29,8 +30,16 @@ namespace coremerce.Controllers
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = "Basic")]
         public async Task<ActionResult<Customers>> GetCustomers(Guid id)
         {
+            var ident = User.Identity as ClaimsIdentity;
+            var currentLoggedInUserId = ident.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            if (currentLoggedInUserId != id.ToString())
+            {
+                return BadRequest("you are not authorized");
+            }
+
             var customers = await _context.Customers.FindAsync(id);
 
             if (customers == null)
