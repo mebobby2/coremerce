@@ -167,6 +167,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 80
+Page 87
 
-I am returning BadRequest() by adding an error message for th
+Let's get started. Remember that our goal is to achieve the following
