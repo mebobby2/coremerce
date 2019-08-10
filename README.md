@@ -12,7 +12,7 @@
 
 ## Run
 1. ```dotnet run```
-2. Visit: https://localhost:5001/api/values
+2. Visit: https://localhost:5001/Home.html
 
 ## Package Management
 To add a package: ```dotnet add package Microsoft.EntityFrameworkCore.SqlServer```
