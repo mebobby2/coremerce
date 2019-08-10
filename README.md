@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 90
+Page 92
 
-To test the API, you can design an HTML page to show the profile of the user by getting
+Now, there is an important code block that should be included
