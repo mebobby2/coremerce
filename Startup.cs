@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.FileProviders;
 using System.Collections.Generic;
+using IdentityServer4.Services;
+using IdentityServer4.Validation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -35,10 +38,6 @@ namespace coremerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IProductService, ProductService>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            var connection = @"server=localhost;port=3306;user=root;password=password11;database=Coremerce";
-            services.AddDbContext<CoremerceContext>(options => options.UseMySql(connection));
 
             services.AddCors(options => {
                 options.AddPolicy("AllowAll",
@@ -50,15 +49,32 @@ namespace coremerce
                     });
             });
 
-            services.AddAuthentication("Basic")
-                .AddScheme<BasicAuthenticationOptions, BasicAuthenticationHandler>("Basic", null);
-            services.AddTransient<IAuthenticationHandler, BasicAuthenticationHandler>();
+            // services.AddAuthentication("Basic")
+            //     .AddScheme<BasicAuthenticationOptions, BasicAuthenticationHandler>("Basic", null);
+            // services.AddTransient<IAuthenticationHandler, BasicAuthenticationHandler>();
 
             services.AddIdentityServer()
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddProfileService<ProfileService>()
                 .AddDeveloperSigningCredential();
+
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o => {
+                o.Authority = "https://localhost:5001";
+                o.Audience = "Coremerce.ReadAccess";
+                o.RequireHttpsMetadata = false;
+            });
+
+            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
+            services.AddTransient<IProfileService, ProfileService>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var connection = @"server=localhost;port=3306;user=root;password=password11;database=Coremerce";
+            services.AddDbContext<CoremerceContext>(options => options.UseMySql(connection));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

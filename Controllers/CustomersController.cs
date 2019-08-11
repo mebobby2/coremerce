@@ -31,7 +31,8 @@ namespace coremerce.Controllers
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = "Basic")]
+        // [Authorize(AuthenticationSchemes = "Basic")]
+        [Authorize]
         public async Task<ActionResult<Customers>> GetCustomers(Guid id)
         {
             var ident = User.Identity as ClaimsIdentity;
