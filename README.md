@@ -179,6 +179,8 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 98
+Page 100
 
-Now coming to the API, we need to add
+Oops! It's a bad request
+
+Before that: find our why POST /connect/token is returning 404
