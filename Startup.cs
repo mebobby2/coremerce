@@ -17,6 +17,7 @@ using System.IO;
 using coremerce.Interfaces;
 using coremerce.Services;
 using coremerce.Security.Authentication;
+using coremerce.Security.OAuth;
 using coremerce.Models;
 
 namespace coremerce
@@ -52,6 +53,12 @@ namespace coremerce
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationOptions, BasicAuthenticationHandler>("Basic", null);
             services.AddTransient<IAuthenticationHandler, BasicAuthenticationHandler>();
+
+            services.AddIdentityServer()
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())
+                .AddProfileService<ProfileService>()
+                .AddDeveloperSigningCredential();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
