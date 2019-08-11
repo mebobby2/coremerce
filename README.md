@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 92
+Page 98
 
-Now, there is an important code block that should be included
+Now coming to the API, we need to add
