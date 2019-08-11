@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.Extensions.FileProviders;
 using System.Collections.Generic;
 using IdentityServer4.Services;
@@ -63,7 +64,7 @@ namespace coremerce
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(o => {
-                o.Authority = "https://localhost:5001";
+                o.Authority = "http://localhost:5000";
                 o.Audience = "Coremerce.ReadAccess";
                 o.RequireHttpsMetadata = false;
             });
@@ -83,6 +84,7 @@ namespace coremerce
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                IdentityModelEventSource.ShowPII = true;
             }
             else
             {
