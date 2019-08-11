@@ -47,7 +47,7 @@ namespace coremerce.Security.Authentication
 
       if (parts.Length != 2)
       {
-          return Task.FromResult(AuthenticateResult.Fail("Invalid Basic Authentication Header"));
+        return Task.FromResult(AuthenticateResult.Fail("Invalid Basic Authentication Header"));
       }
 
       string email = parts[0];
@@ -56,7 +56,7 @@ namespace coremerce.Security.Authentication
       var customer = _context.Customers.SingleOrDefault(x => x.Email == email && x.Password == password);
       if (customer == null)
       {
-          return Task.FromResult(AuthenticateResult.Fail("Invalid email and password."));
+        return Task.FromResult(AuthenticateResult.Fail("Invalid email and password."));
       }
 
       var claims = new[]
@@ -69,6 +69,12 @@ namespace coremerce.Security.Authentication
       var principal = new ClaimsPrincipal(identity);
       var ticket = new AuthenticationTicket(principal, Scheme.Name);
       return Task.FromResult(AuthenticateResult.Success(ticket));
+    }
+
+    protected override async Task HandleChallengeAsync(AuthenticationProperties properties)
+    {
+      Response.Headers["WWW-Authenticate"] = $"Basic realm=\"http://localhost:5001\", charset=\"UTF-8\"";
+      await base.HandleChallengeAsync(properties);
     }
   }
 }
