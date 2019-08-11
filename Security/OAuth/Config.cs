@@ -11,8 +11,8 @@ namespace coremerce.Security.OAuth
       return new List<ApiResource>
       {
         new ApiResource(
-          "FlixOneStore.ReadAccess",
-          "FlixOneStore API",
+          "Coremerce.ReadAccess",
+          "Coremerce API",
           new List<string> {
             JwtClaimTypes.Id,
             JwtClaimTypes.Email,
@@ -22,7 +22,7 @@ namespace coremerce.Security.OAuth
           }
         ),
 
-        new ApiResource("FlixOneStore.FullAccess", "FlixOneStore API")
+        new ApiResource("Coremerce.FullAccess", "Coremerce API")
       };
     }
 
