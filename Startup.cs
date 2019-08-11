@@ -91,6 +91,7 @@ namespace coremerce
             }
 
             app.UseHttpsRedirection();
+            app.UseIdentityServer();
             app.UseCors("AllowAll");
             app.UseMvc();
 
