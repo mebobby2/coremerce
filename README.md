@@ -182,5 +182,3 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 Page 101
 
 Step 5
-
-Getting ```Unable to obtain configuration from: '[PII is hidden]``` error when using access token on get customer endpoint
