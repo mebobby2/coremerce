@@ -179,6 +179,9 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 101
+Page 112
 
-Step 5
+Product listing
+
+
+Before that: seed database (google if there is way)
