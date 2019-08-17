@@ -184,4 +184,3 @@ Page 112
 Product listing
 
 
-Before that: seed database (google if there is way)
