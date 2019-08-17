@@ -15,21 +15,21 @@
                 $('.container > div').hide();
                 $('.nav li').removeClass('active');
 
-                $(this).addClass('active');
+                $(this).parent().addClass('active');
                 $('#' + $(this).attr('data-div')).show();
 
                 // Load profile details.
                 if ($(this).attr('data-div') == 'Profile') {
                     // Call API.
-                    var email = 'songlei1@gmail.com',
-                        password = 'password';
+                    // var email = 'songlei1@gmail.com',
+                        // password = 'password';
 
                     $.ajax({
                         url: 'http://localhost:5000/api/Customers/1482b73c-f1fa-4812-a04d-f6fce55afe2f',
                         type: "GET",
                         contentType: "application/json",
                         dataType: "json",
-                        headers: { 'Authorization': 'Basic ' + btoa(email + ':' + password) },
+                        headers: { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4YjEzMGI0NTUzMjEwYjgwMTQ4ZWNiMWFkOWU4NGU5IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjYwMzU3OTUsImV4cCI6MTU2NjAzOTM5NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJDb3JlbWVyY2UuUmVhZEFjY2VzcyJdLCJjbGllbnRfaWQiOiJodG1sQ2xpZW50Iiwic3ViIjoiMTQ4MmI3M2MtZjFmYS00ODEyLWEwNGQtZjZmY2U1NWFmZTJmIiwiYXV0aF90aW1lIjoxNTY2MDM1Nzk1LCJpZHAiOiJsb2NhbCIsImlkIjoiMTQ4MmI3M2MtZjFmYS00ODEyLWEwNGQtZjZmY2U1NWFmZTJmIiwibmFtZSI6IlNvbmcgTGVpIiwiZ2l2ZW5fbmFtZSI6IlNvbmciLCJmYW1pbHlfbmFtZSI6IkxlaSIsImVtYWlsIjoic29uZ2xlaTFAZ21haWwuY29tIiwic2NvcGUiOlsiQ29yZW1lcmNlLlJlYWRBY2Nlc3MiXSwiYW1yIjpbImRhdGFiYXNlIl19.v5DrMWDqH6QFW2b7oZeLCeyyBcL6LzLFoQKozuGgpLdstuE4WQ_ZD4c4PAGCXjHOgWvRv0gVMy5PHNAOvpzMqf_ny1LfeEQdnTlNrE4dEeyDr1sFhRhI5HEWYDtIXukZBKnFUnY6EPa4AUqvNhBip3zVX8z0EL0cTIUrw05TSsBNsHP0_O6w-zSRAy1mK2Cz3wmiu5xJ9p2iVB6wy2iIbJdbzZceVTo8wapxkvI5N2GcNbSnVvuI4GGcF0Rx7wUzQItbMNToS4mdNDj3u3PtQoyTLvSpHtBwQuMcNIUrPQi8ozFa9jg8kjgTAXvnKTHxQ9nRRHPVAFuFB-ibOTaiJg' },
                         success: function (result) {
                             $('#Profile .form-horizontal').empty();
                             if (result) {
