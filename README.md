@@ -182,5 +182,3 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 Page 112
 
 Product listing
-
-

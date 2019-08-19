@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.Extensions.FileProviders;
 using System.Collections.Generic;
@@ -72,7 +73,11 @@ namespace coremerce
             services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
             services.AddTransient<IProfileService, ProfileService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            .AddJsonOptions(options => {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
             var connection = @"server=localhost;port=3306;user=root;password=password11;database=Coremerce";
             services.AddDbContext<CoremerceContext>(options => options.UseMySql(connection));
 
