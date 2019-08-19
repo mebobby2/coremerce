@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 112
+Page 115
 
-Product listing
+Let's now have a look at the response we receive for one product
