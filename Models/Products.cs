@@ -24,8 +24,8 @@ namespace coremerce.Models
         public DateTime Modifiedon { get; set; }
         public decimal Weight { get; set; }
         public byte Status { get; set; }
-        public Guid ManufactureId { get; set; }
-        public Guid Taxclassid { get; set; }
+        public Guid? ManufactureId { get; set; }
+        public Guid? Taxclassid { get; set; }
 
         public virtual ICollection<Cart> Cart { get; set; }
         public virtual ICollection<CartAttributes> CartAttributes { get; set; }
