@@ -140,7 +140,7 @@
 
         // Load products' details.
         $.ajax({
-          url: "http://localhost:57571/api/Products?searchText=" + searchText,
+          url: "http://localhost:5000/api/Products?searchText=" + searchText,
           type: "GET",
           contentType: "application/json",
           dataType: "json",
@@ -380,7 +380,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8">
-            <table id="tblProducts"></table>
+            <table id="tblProducts" style="width: 80%;"></table>
           </div>
           <div class="col-lg-4">
             <table id="tblCart" class="table">
