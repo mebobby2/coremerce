@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 115
+Page 120
 
-Let's now have a look at the response we receive for one product
+Implementing security˝
