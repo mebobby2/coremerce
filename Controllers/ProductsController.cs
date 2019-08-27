@@ -22,9 +22,12 @@ namespace coremerce.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts()
+        public IEnumerable<Products> GetProducts(string searchText)
         {
-            return await _context.Products.Include(x => x.Productsdetail).ToListAsync();
+            var products =  _context.Products.Include(x => x.Productsdetail).ToList();
+            if (!string.IsNullOrEmpty(searchText))
+                products = products.Where(p => p.Productsdetail.Any(pd => pd.Name.ToLower().Contains(searchText.ToLower()))).ToList();
+            return products;
         }
 
         // GET: api/Products/5
