@@ -23,8 +23,8 @@
 
     <script type="text/javascript">
       var accessToken =
-          "eyJhbGciOiJSUzI1NiIsImtpZCI6ImVkMDFmZTk4ZWU5ZDg2MDllNzdiNmUxM2M0NmMzZWU1IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MjY1NTk3MjksImV4cCI6MTUyNjU2MzMyOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NzU3MSIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjU3NTcxL3Jlc291cmNlcyIsIkZsaXhPbmVTdG9yZS5SZWFkQWNjZXNzIl0sImNsaWVudF9pZCI6Imh0bWxDbGllbnQiLCJzdWIiOiI5MTBkNGMyZi1iMzk0LTQ1NzgtOGQ5Yy03Y2EzZmQzMjY2ZTIiLCJhdXRoX3RpbWUiOjE1MjY1NTk3MjksImlkcCI6ImxvY2FsIiwiaWQiOiI5MTBkNGMyZi1iMzk0LTQ1NzgtOGQ5Yy03Y2EzZmQzMjY2ZTIiLCJuYW1lIjoiVGFkaXQgRGFzaCIsImdpdmVuX25hbWUiOiJUYWRpdCIsImZhbWlseV9uYW1lIjoiRGFzaCIsImVtYWlsIjoidGFkaXRkYXNoQGdtYWlsLmNvbSIsInNjb3BlIjpbIkZsaXhPbmVTdG9yZS5SZWFkQWNjZXNzIl0sImFtciI6WyJkYXRhYmFzZSJdfQ.lSb2RPrkNV4UUOfEF65YAgX5yJSzx03d3e2_Dqr_LySUUC92JHVmpcooD_BhjnmOql1gtKyf0cKVkJXV0NiSqTJEYevczGqo3hIUWJo-KduIBkmZlJSPn-fjqxQHe0QCflUqohCu13jh4VBEGJT7OmJ35xgRHLbf2lQ2ZkgSnTmlwrJ9UMQvL1u8whk_bAlpecNytlDcXXndu1EYixjV7EeQ5ty8hgCsfB8s-4kXUFk2B_PtuIAJonIO3In6yJQnhLSuDWR2IlCMRyJDTgNUTQXq-hT9AjI4dyPMzm7A3VntmVHfPxnP7L5r-3oDiXTrWHf6J6-GwqlfQPxYuNnhnA",
-        customerId = "910D4C2F-B394-4578-8D9C-7CA3FD3266E2";
+          "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4YjEzMGI0NTUzMjEwYjgwMTQ4ZWNiMWFkOWU4NGU5IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1Njc1NDI1NjQsImV4cCI6MTU2NzU0NjE2NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJDb3JlbWVyY2UuUmVhZEFjY2VzcyJdLCJjbGllbnRfaWQiOiJodG1sQ2xpZW50Iiwic3ViIjoiMTQ4MmI3M2MtZjFmYS00ODEyLWEwNGQtZjZmY2U1NWFmZTJhIiwiYXV0aF90aW1lIjoxNTY3NTQyNTY0LCJpZHAiOiJsb2NhbCIsImlkIjoiMTQ4MmI3M2MtZjFmYS00ODEyLWEwNGQtZjZmY2U1NWFmZTJhIiwibmFtZSI6IlNvbmcgTGVpIiwiZ2l2ZW5fbmFtZSI6IlNvbmciLCJmYW1pbHlfbmFtZSI6IkxlaSIsImVtYWlsIjoic29uZ2xlaTFAZ21haWwuY29tIiwic2NvcGUiOlsiQ29yZW1lcmNlLlJlYWRBY2Nlc3MiXSwiYW1yIjpbImRhdGFiYXNlIl19.mLsXwGbT9k5d4KIQylf_q_wKfdX5vBj8ZXGpQNPKF7YWoKj-ZH2zh7eFNMSiApDozCRDqZEcsUlhivbd7gWkx9x214VL4a-EYjRbULHkNmEGcJ-4cmTh7ldk5dgxaNXL3XvrTHaAFUcOQPaIJohIQF_afAXP69bRlPE0nKet7raSCC4cNdYQ7s9-l44lginv44ykNI-WVKwvzpxZ-JM9qQD9MIbi9enJzV-JJ0urDBPNlAtDoSVE3h4WJYQXRacjhlb8K78k_8obsg3profd8POEVJBoyFCwpqS7aKs7cI0CQFauv_pDRRTOZP9cjqKveK6mUj2XkmtA0ZXV-hcoLg",
+        customerId = "1482b73c-f1fa-4812-a04d-f6fce55afe2a";
 
       $(document).ready(function() {
         $(".container > div")
@@ -113,7 +113,7 @@
 
         // 3. Call POST /api/Orders.
         $.ajax({
-          url: "http://localhost:57571/api/Orders",
+          url: "http://localhost:5000/api/Orders",
           type: "POST",
           contentType: "application/json",
           dataType: "json",
@@ -247,7 +247,7 @@
         };
 
         $.ajax({
-          url: "http://localhost:57571/api/Carts",
+          url: "http://localhost:5000/api/Carts",
           type: "POST",
           contentType: "application/json",
           dataType: "json",
@@ -271,7 +271,7 @@
       function PutCart(cartItem) {
         var cart = {
           Id: cartItem.attr("data-cart-id"),
-          Customerid: "910D4C2F-B394-4578-8D9C-7CA3FD3266E2",
+          Customerid: customerId,
           Productid: cartItem.attr("data-product-id"),
           Qty: cartItem.find("td.qty").html(),
           Finalprice: cartItem
@@ -281,7 +281,7 @@
         };
 
         $.ajax({
-          url: "http://localhost:57571/api/Carts/" + cart.Id,
+          url: "http://localhost:5000/api/Carts/" + cart.Id,
           type: "PUT",
           contentType: "application/json",
           dataType: "json",
@@ -297,7 +297,7 @@
 
       function DeleteCart(cartId) {
         $.ajax({
-          url: "http://localhost:57571/api/Carts/" + cartId,
+          url: "http://localhost:5000/api/Carts/" + cartId,
           type: "DELETE",
           contentType: "application/json",
           headers: {
