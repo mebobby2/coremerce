@@ -7,8 +7,18 @@ namespace coremerce.Models
     {
         public Orders()
         {
+            Id = Guid.NewGuid();
             OrderProductAttributes = new HashSet<OrderProductAttributes>();
             OrdersProducts = new HashSet<OrdersProducts>();
+            Datepurcahsed = DateTime.Now;
+            Latsmodified = DateTime.Now;
+            Shipingmethodid = Guid.NewGuid();
+            Paymentmethodid = Guid.NewGuid();
+            Shippingcost = 0;
+            Orderdatefinished = DateTime.Now;
+            Currency = "$";
+            CurrencyValue = 0;
+            Orderstatus = "Placed";
         }
 
         public Guid Id { get; set; }
@@ -27,11 +37,11 @@ namespace coremerce.Models
         public string Deliverystate { get; set; }
         public string Deliverypostalcode { get; set; }
         public string Deliverycountry { get; set; }
-        public string Paymentmethodid { get; set; }
+        public Guid Paymentmethodid { get; set; }
         public DateTime Latsmodified { get; set; }
         public DateTime Datepurcahsed { get; set; }
         public decimal? Shippingcost { get; set; }
-        public string Shipingmethodid { get; set; }
+        public Guid Shipingmethodid { get; set; }
         public string Orderstatus { get; set; }
         public DateTime Orderdatefinished { get; set; }
         public string Comments { get; set; }

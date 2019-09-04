@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 131
+Page 137
 
-UI design for placing an order
+Exposing shipping details
