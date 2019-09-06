@@ -31,7 +31,8 @@ namespace coremerce.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Orders>> GetOrders(Guid id)
         {
-            var orders = await _context.Orders.FindAsync(id);
+            var orders = await _context.Orders.Include
+                (o => o.OrdersProducts).SingleOrDefaultAsync(m => m.Id == id);
 
             if (orders == null)
             {
