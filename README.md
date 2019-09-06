@@ -179,6 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 137
+Page 149
 
-Exposing shipping details
+Adding logging to our API in middleware
