@@ -179,8 +179,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 149
+Page 169
 
-Adding logging to our API in middleware
-
-Before: create the project chap05_01 in the previous pages
+Testing RESTful Web Services
