@@ -174,11 +174,28 @@ Most modern applications are designed using multiple layers, and the same is exp
 * Body - This is the main part, which contains the actual message in XML structure. Obviously, it is a mandatory element.
 * Fault - If any errors occur while processing the SOAP message, an optional Fault element can be used to provide information about them.
 
+### Testing
+#### Test Paradigms
+When someone is working with a test paradigm, they should know the terms task, scenario, and use case:
+* Task - this is an act or piece of work that needs to be completed. There will be different ways to complete the task, but the overall intention with a task is that it should be completed.
+* Scenario - Typically, a scenario is nothing but a situation where a system has failed after interaction with a customer. For example, there are a few situations that can cause a system's login functionality to fail, and these will be documented as a scenario. A scenario usually leads to one or more tests.
+* Use case - A use case is a set of possible sequences of interactions between a system and a user. It can also be a collection of possible scenarios that should be assessed when a system is implemented. These use cases are more detailed and documented, and are divided into various steps.
+
+#### Bugs and defects
+A bug is related to something that is done correctly but executes an unexpected output, for example, 2 + 3 = 6. On the other hand, a defect is something that has been missed during planning. A defect is related to a design or requirements gap that has slipped past a client or customer during production.
+
+#### Test pyramid
+* Unit tests: These are tests that test small functionalities in units of an application of RESTful services developed in ASP.NET Core
+* RESTful service tests (Acceptance tests): These are tests that test an independent service or a service that communicates with another, often external, service
+* These tests belong to the client or consumer who will consume RESTful services; they help in testing an entire system with an aspect of the user interface and are end-to-end tests
+
+
+
 ## Book Code
 https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Core
 
 
 ## Upto
-Page 169
+Page 176
 
-Testing RESTful Web Services
+Types of tests
