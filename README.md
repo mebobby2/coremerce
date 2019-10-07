@@ -189,6 +189,39 @@ A bug is related to something that is done correctly but executes an unexpected 
 * RESTful service tests (Acceptance tests): These are tests that test an independent service or a service that communicates with another, often external, service
 * These tests belong to the client or consumer who will consume RESTful services; they help in testing an entire system with an aspect of the user interface and are end-to-end tests
 
+#### Security Testing
+In general, security testing is a way of testing whether an application is secure or if there is any chance of leaking someone's data.
+
+#### Performance or load testing
+* Load testing - This tests the behavior of the system under various circumstances of specific load. This also covers critical transactions, database load, application servers, and so on.
+* Stress testing - This is an approach where a system goes under regress testing and finds the upper-limit of a system's capacity. It is also determined by how a system behaves in a critical situation where the current load goes above the expected maximum load.
+* Soak testing - This is also known as endurance testing. In this test, the main purpose is to monitor memory utilization, memory leaks, or various factors which affect system performance.
+* Spike testing - This is an approach where we make sure that the system is able to sustain the workload. One of the best tasks for determining performance is suddenly increasing the user loads.
+
+### Continuous Integration and Continuous Deployment
+#### Continuous Integration
+This practice emerged from the problems of the frequent integration of code in large teams. The basic idea is to keep the delta, or change to the software, small. This provides confidence that the software is in a workable state. Even if a check-in made by a developer breaks the system, it is easy to fix it using this process.
+
+#### Continuous Deployment
+In CD, each successful build gets deployed to a preferred environment, for example, production. Environments vary from organization to organization. So, CD is not meant for a production environment but you can use it for other environments too like dev, staging, and so on. CD is more important from a technical team's perspective. Under CD, there are several other practices, such as automated unit testing, labeling, versioning of build numbers, and traceability of changes. With continuous delivery, the technical team ensures that the changes pushed to production through various lower environments work as expected in production. Usually, these are small and deployed very quickly.
+
+#### Continuous Delivery
+Continuous delivery is different from CD. CD comes from a technical team's perspective, whereas continuous delivery is more focused on providing the deployed code as early as possible to the customer. To make sure that customers get the right defect-free product, in continuous delivery, every build must pass through all the quality assurance checks. Once the product passes the satisfactory quality verification, it is the business stakeholders' decision when to release it.
+
+#### Release
+A business feature made available to the end user is referred to as the release of a feature. To release a feature or service, the relevant build artifacts should be deployed beforehand. Usually, the feature toggle manages the release of a feature. If the feature flag (also called the feature toggle) is not switched on in production, it is called a dark release of the specified feature.
+
+#### Prerequisites
+* Self-sufficient teams - Amazon, which is a pioneer of SOA and microservice architectures, follows the Two Pizza Teams paradigm. This means usually a microservice team will have no more than 7   10 team members. These team members will have all the necessary skills and roles; for example, development, operations, and business analyst. Such a service team handles the development, operations, and management of a microservice.
+* CI and CD - CI and CD are prerequisites for implementing RESTful services that are a part of a system based on a microservices architectural style. Smaller self- sufficient teams, that can integrate their work frequently, are precursors to the success of microservices. This architecture is not as simple as a monolith. However, automation and the ability to push code upgrades regularly enables teams to handle complexity. Tools, such as Team Foundation Online Services (TFS), TeamCity, and Jenkins, are quite popular toolchains in this space.
+* Infrastructure as code - The idea of representing hardware and infrastructure components, such as networks with code, is new. It helps you make deployment environments, such as integration, testing, and production, look exactly identical. This means developers and test engineers will be able to reproduce production defects easily in lower environments. With tools such as CFEngine, Chef, Puppet, Ansible, and Powershell DSC, you can write your entire infrastructure as code. With this paradigm shift, you can also put your infrastructure under a version control system and ship it as an artifact in deployment.
+* Utilization of cloud-computing - Cloud computing is a big catalyst for adopting microservices. It is not mandatory, as such, for microservice deployment though. Cloud computing comes with a near-infinite scale, elasticity, and rapid provisioning capability. It is a no-brainer that the cloud is a natural ally of microservices. So, knowledge and experience with the Azure cloud will help you adopt microservices.
+
+
+
+
+
+
 
 
 ## Book Code
@@ -196,6 +229,6 @@ https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Cor
 
 
 ## Upto
-Page 189
+Page 266
 
-Security testing
+Validations
