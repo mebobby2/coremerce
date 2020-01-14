@@ -226,9 +226,3 @@ A business feature made available to the end user is referred to as the release 
 
 ## Book Code
 https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-DOTNET-Core
-
-
-## Upto
-Page 277
-
-Caching persisted data
